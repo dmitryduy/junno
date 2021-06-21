@@ -1,0 +1,23 @@
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.p-l-50 {
+    padding-left: 50px;
+}
+
+.p-r-50 {
+    padding-right: 50px;
+}
+
+.p-t-15 {
+    padding-top: 15px;
+}
+
+.p-b-15 {
+    padding-bottom: 15px;;
+}
