@@ -1,0 +1,20 @@
+.banners {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.banners div {
+    overflow: hidden;
+    height: 100%;
+}
+
+.banners div img {
+    transition: 1s ease;
+}
+
+.banners div img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

@@ -8,6 +8,10 @@
   font-family: 'Khula', serif;
 }
 
+*::selection {
+  background-color: #10a341;
+  color: white;
+}
 mark {
   background-color: transparent;
 }

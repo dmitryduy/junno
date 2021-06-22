@@ -1,0 +1,161 @@
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 10px;
+    overflow: hidden;
+    transition: .2s linear;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.card:hover {
+    box-shadow: 4px 2px 19px 3px rgba(34, 60, 80, 0.2);
+    transform: translateY(-5px);
+   
+}
+
+.card img {
+    height: 250px;
+}
+
+.card__thumbnail {
+position: relative;
+}
+
+.card__thumbnail:hover {
+    cursor: pointer;
+}
+
+
+.card__promotions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 0;
+
+}
+
+.card__discount {
+    background-color: #10a341;
+}
+
+.card__new {
+    background-color: #f33535;
+}
+
+.card__new, .card__discount {
+    border-radius: 5px;
+    height: 20px;
+    padding: 0 10px;
+    color: white;
+    letter-spacing: -1px;
+    font-weight: 600;
+}
+
+.card__cart-items {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 20px ;
+}
+
+.card__cart-items div{
+    width: 40px;
+    height: 40px;
+    color: #8f8f8f;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #f6f6f6;
+    transition: .6s ease;
+}
+
+.hide {
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.show {
+    transition: 1s ease;
+    opacity: 1;
+}
+
+.card__cart-items div:not(:first-child) {
+    margin-left: 20px;
+}
+
+.card__cart-items div:hover {
+    background-color: #f33535;
+    color: white;
+    cursor: pointer;
+}
+
+
+.card__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.card__name {
+    color: #707070;
+    transition: .5s ease;
+    height: 50px;
+}
+
+.card__name:hover {
+    color: #f33535;
+    cursor: pointer;
+}
+
+.card__rate {
+    color: #fdd835;
+}
+
+
+.card__rate svg{
+    width: 20px;
+    height: 20px;
+}
+
+.card__rate svg:not(:first-child) {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.cart__price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cart__price span {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.cart__price div {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: .5s ease;
+    position: relative;
+    top: -8px;
+}
+
+.cart__price div:hover {
+    cursor: pointer;
+    background-color: #f33535;
+    color: white;
+}
+
+.favorite {
+    background-color: #f33535 !important;
+    color: white !important;
+}

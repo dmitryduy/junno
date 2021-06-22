@@ -1,0 +1,164 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "isNew": false,
+      "name": "Fish Cut Out Set",
+      "description": "test",
+      "price": "100.00",
+      "discount": 10,
+      "category": "women",
+      "rating": 5,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/1.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "isNew": false,
+      "name": "Fish Cut Out Set",
+      "description": "test",
+      "price": "34.23   ",
+      "discount": 10,
+      "category": "women",
+      "rating": 5,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/product/1.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "isNew": true,
+      "name": "Fish Cut Out Set",
+      "description": "test",
+      "price": "23.00",
+      "discount": null,
+      "category": "women",
+      "rating": 3,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/product/12.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "isNew": false,
+      "name": "Fish Cut Out Set",
+      "description": "test",
+      "price": "349.23",
+      "discount": 34,
+      "category": "men",
+      "rating": 3,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/product/7.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "isNew": true,
+      "name": "Fish Cut Out Set",
+      "description": "test",
+      "price": "3.00",
+      "discount": 23,
+      "category": "men",
+      "rating": 4,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/product/7.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "isNew": true,
+      "name": "Original Kaval Windbreaker Winter Jacket",
+      "description": "test",
+      "price": "44.53",
+      "discount": 23,
+      "category": "casual",
+      "rating": 2,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/product/5.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "isNew": false,
+      "name": "Originals Windbreaker Winter Jacket",
+      "description": "test",
+      "price": "44.53",
+      "discount": null,
+      "category": "casual",
+      "rating": 5,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/product/8.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "isNew": true,
+      "name": "Walnut Cutting Board",
+      "description": "test",
+      "price": "55.00",
+      "discount": null,
+      "category": "men",
+      "rating": 5,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/product/8.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "isNew": true,
+      "name": "Lucky Wooden Elephant",
+      "description": "test",
+      "price": "32.00",
+      "discount": 12,
+      "category": "men",
+      "rating": 1,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/product/12.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "isNew": false,
+      "name": "Originals Windbreaker Winter Jacket",
+      "description": "test",
+      "price": "322.00",
+      "discount": null,
+      "category": "casual",
+      "rating": 6,
+      "images": [
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/2.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/3.jpg",
+        "https://htmldemo.hasthemes.com/junno-preview/junno/assets/img/slider/thumb/4.jpg"
+      ]
+    }
+  ]
+}

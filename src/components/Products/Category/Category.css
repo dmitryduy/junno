@@ -1,0 +1,22 @@
+.category {
+    text-transform: uppercase;
+    padding: 5px 15px;
+    border-radius: 10px;
+    transition: .4s ease;
+    border: 2px solid white;
+    margin-left: 8px;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.active {
+    border: 2px solid #f33535;
+    color: #f33535;
+}
+
+.category:hover {
+    cursor: pointer;
+    border: 2px solid #f33535;
+    color: #f33535;
+}
