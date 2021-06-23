@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-.active {
+.category__active {
     border: 2px solid #f33535;
     color: #f33535;
 }

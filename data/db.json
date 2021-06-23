@@ -2,9 +2,10 @@
   "cards": [
     {
       "id": 1,
+      "similar": [2, 6, 3, 7, 9, 4],
       "isNew": false,
       "name": "Fish Cut Out Set",
-      "description": "test",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dicta doloribus eum facilis fugiat in\n        inventore magnam necessitatibus nobis placeat quaerat, quas qui quibusdam recusandae, repudiandae sapiente sequi\n        sint, veritatis!",
       "price": "100.00",
       "discount": 10,
       "category": "women",
@@ -18,6 +19,7 @@
     },
     {
       "id": 2,
+      "similar": [5, 1, 3, 6, 9, 4],
       "isNew": false,
       "name": "Fish Cut Out Set",
       "description": "test",
@@ -34,6 +36,7 @@
     },
     {
       "id": 3,
+      "similar": [8, 6, 1, 9, 4, 2],
       "isNew": true,
       "name": "Fish Cut Out Set",
       "description": "test",
@@ -50,6 +53,7 @@
     },
     {
       "id": 4,
+      "similar": [8, 6, 1, 9, 7, 2],
       "isNew": false,
       "name": "Fish Cut Out Set",
       "description": "test",
@@ -67,6 +71,7 @@
     {
       "id": 5,
       "isNew": true,
+      "similar": [8, 6, 1, 9, 4, 2],
       "name": "Fish Cut Out Set",
       "description": "test",
       "price": "3.00",
@@ -82,6 +87,7 @@
     },
     {
       "id": 6,
+      "similar": [8, 5, 4, 2],
       "isNew": true,
       "name": "Original Kaval Windbreaker Winter Jacket",
       "description": "test",
@@ -98,6 +104,7 @@
     },
     {
       "id": 7,
+      "similar": [8, 6, 1, 9],
       "isNew": false,
       "name": "Originals Windbreaker Winter Jacket",
       "description": "test",
@@ -114,6 +121,7 @@
     },
     {
       "id": 8,
+      "similar": [4, 2],
       "isNew": true,
       "name": "Walnut Cutting Board",
       "description": "test",
@@ -130,6 +138,7 @@
     },
     {
       "id": 9,
+      "similar": [8, 6, 1, 3, 2],
       "isNew": true,
       "name": "Lucky Wooden Elephant",
       "description": "test",
@@ -146,6 +155,7 @@
     },
     {
       "id": 10,
+      "similar": [8, 9, 4, 2],
       "isNew": false,
       "name": "Originals Windbreaker Winter Jacket",
       "description": "test",

@@ -9,17 +9,16 @@ const Products = () => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-       dispatch(fetchCards());
-    },[]);
-
     const {categories, activeCategoryIndex, cards} = useSelector(({shoes}) => ({
         categories: shoes.categories,
         activeCategoryIndex: shoes.activeCategory,
         cards: shoes.cards
     }));
 
-    const favorites = useSelector(({cart}) => cart.favorites);
+    useEffect(() => {
+        if (!cards.length)
+            dispatch(fetchCards());
+    }, []);
 
     const setCategory = useDispatch();
 
@@ -37,7 +36,7 @@ const Products = () => {
                                                                active={activeCategoryIndex === index && 'active'}/>)}
             </div>
             <div className="cards">
-                {cards.map(card => <Card favorite={favorites.includes(card.id)} key={card.id} {...card}/>)}
+                {cards.map(card => <Card key={card.id} {...card}/>)}
 
             </div>
         </div>

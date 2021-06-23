@@ -13,7 +13,7 @@ const Category = ({name, active, setCategory, index}) => {
     }
 
     return (
-        <div className={`category ${active}`} onClick={toggleCategory}>{name} shoes</div>
+        <div className={`category category__${active}`} onClick={toggleCategory}>{name} shoes</div>
     )
 }
 

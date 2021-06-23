@@ -45,7 +45,7 @@ export const setCards = data => ({
 })
 
 export const fetchCards = () => dispatch => {
-    fetch(' http://localhost:3004/cards')
+    fetch('http://localhost:3004/cards')
         .then(response => response.json())
         .then(data => {
             dispatch(setCards(data));
@@ -59,6 +59,7 @@ export const fetchCategoryCards = name => dispatch => {
             dispatch(setCards(data));
         });
 }
+
 
 export const searchShoes = text => ({
     type: constants.SEARCH_SHOES,

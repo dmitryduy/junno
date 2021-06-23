@@ -113,25 +113,11 @@ position: relative;
     cursor: pointer;
 }
 
-.card__rate {
-    color: #fdd835;
-}
-
-
-.card__rate svg{
-    width: 20px;
-    height: 20px;
-}
-
-.card__rate svg:not(:first-child) {
-    margin-left: 5px;
-    margin-top: 10px;
-}
-
 .cart__price {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-items: center;
 }
 
 .cart__price span {
@@ -146,7 +132,8 @@ position: relative;
     border-radius: 50%;
     transition: .5s ease;
     position: relative;
-    top: -8px;
+    top: -2px;
+    color: black;
 }
 
 .cart__price div:hover {
@@ -154,6 +141,19 @@ position: relative;
     background-color: #f33535;
     color: white;
 }
+
+
+.card__discount-price {
+    color: #f33535;
+
+}
+
+.cart__old-price {
+    text-decoration: line-through;
+    color: #9b9b9b;
+   font-size: .9em !important;
+}
+
 
 .favorite {
     background-color: #f33535 !important;

@@ -1,0 +1,10 @@
+.rating svg{
+    width: 20px;
+    height: 20px;
+    color: #fdd835;
+}
+
+.rating svg:not(:first-child) {
+    margin-left: 5px;
+    margin-top: 10px;
+}

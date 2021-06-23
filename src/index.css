@@ -19,3 +19,11 @@ mark {
 li {
   list-style: none;
 }
+
+a {
+  text-decoration: none;
+}
+
+body {
+  padding: 0 calc(20px - (100vw - 100%)) 0  0;
+}
