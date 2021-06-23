@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/junno/static/css/main.21ebc0e5.chunk.css",
+    "main.js": "/junno/static/js/main.80d23aeb.chunk.js",
+    "main.js.map": "/junno/static/js/main.80d23aeb.chunk.js.map",
+    "runtime-main.js": "/junno/static/js/runtime-main.762da3c8.js",
+    "runtime-main.js.map": "/junno/static/js/runtime-main.762da3c8.js.map",
+    "static/js/2.664afc0e.chunk.js": "/junno/static/js/2.664afc0e.chunk.js",
+    "static/js/2.664afc0e.chunk.js.map": "/junno/static/js/2.664afc0e.chunk.js.map",
+    "index.html": "/junno/index.html",
+    "static/css/main.21ebc0e5.chunk.css.map": "/junno/static/css/main.21ebc0e5.chunk.css.map",
+    "static/js/2.664afc0e.chunk.js.LICENSE.txt": "/junno/static/js/2.664afc0e.chunk.js.LICENSE.txt",
+    "static/media/banner-1.e3e9ce63.jpg": "/junno/static/media/banner-1.e3e9ce63.jpg",
+    "static/media/banner-2.015cf950.jpg": "/junno/static/media/banner-2.015cf950.jpg",
+    "static/media/banner-3.18d63655.jpg": "/junno/static/media/banner-3.18d63655.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.762da3c8.js",
+    "static/js/2.664afc0e.chunk.js",
+    "static/css/main.21ebc0e5.chunk.css",
+    "static/js/main.80d23aeb.chunk.js"
+  ]
+}
