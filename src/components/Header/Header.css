@@ -1,12 +1,7 @@
 .header__logo {
-    flex: 1.5;
-}
-
-.header__search {
-    flex: 5;
     position: relative;
+    top: 4px;
 }
-
 
 .header__hidden-search_disabled {
     display: none;
@@ -14,8 +9,8 @@
 
 .header__cart-svg {
     position: relative;
+    bottom: 2px;
 }
-
 
 .header__cart {
     display: flex;

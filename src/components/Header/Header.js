@@ -8,7 +8,7 @@ import SearchItem from "./SearchItem/SearchItem";
 import {NavLink} from "react-router-dom";
 import {showWishList} from "../../redux/cartReducer";
 import {
-    SearchButton,
+    SearchButton, SearchContainer,
     SearchInput,
     SearchResults,
     StyledHeader,
@@ -53,10 +53,11 @@ const Header = ({color}) => {
                     <img src={logo} alt="logo"/>
                 </NavLink>
             </div>
-            <div className='header__search'>
+            <SearchContainer className='header__search'>
                 <SearchInput onInput={(e) => showShoes(e.target.value)}
                              onBlur={() => hideShoes()}
                              padding='10px'
+                             margin='0 10px'
                 />
                 <SearchButton color='#fff' bgColor={color}>
                     <Svg type='search'/>
@@ -65,7 +66,7 @@ const Header = ({color}) => {
                     {!foundShoes.length && <span className='header__not-found'>Not found</span>}
                     {foundShoes.map(shoe => <SearchItem key={shoe.id} {...shoe}/>).slice(0, 4)}
                 </SearchResults>
-            </div>
+            </SearchContainer>
             <WidgetsList as='ul' justify='space-between' align='center'>
                 <WidgetsItem color={color}>
                     <Svg type='shuffle'/>

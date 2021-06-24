@@ -6,8 +6,9 @@ import {ThemeProvider} from "styled-components";
 
 const theme = {
     media: {
-        phone: '(max-width): 425px',
-        tablet: '(max-width): 768px and (min-width) 426px',
+        phone: '(max-width: 425px)',
+        tablet: '(max-width: 768px) and (min-width: 425px)',
+        laptop: '(max-width: 1210px) and (min-width: 768px)',
     }
 }
 

@@ -1,13 +1,18 @@
 import React from "react";
-import './SearchItem.css';
 
-const SearchItem = ({images, name, price}) => {
+import {SearchItemContainer, SearchItemImage, SearchItemName} from "./searchItemStyledComponents";
+import {NavLink} from "react-router-dom";
+
+const SearchItem = ({images, name, price, id}) => {
     return (
-        <div className='search-item'>
-            <img className='search-item__img' src={images[0]} alt="shoe image"/>
-            <span className='search-item__price'>${price}</span>
-            <span className='search-item__name'>{name}</span>
-        </div>
+        <NavLink to={`/about/${id}`}>
+            <SearchItemContainer align='center' justify='space-between' padding='5px 50px'>
+                <SearchItemImage src={images[0]} alt="shoe image"/>
+                <span>${price}</span>
+                <SearchItemName className='search-item__name'>{name}</SearchItemName>
+            </SearchItemContainer>
+        </NavLink>
+
     )
 }
 
