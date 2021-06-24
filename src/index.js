@@ -8,7 +8,7 @@ const theme = {
     media: {
         phone: '(max-width: 425px)',
         tablet: '(max-width: 768px) and (min-width: 425px)',
-        laptop: '(max-width: 1210px) and (min-width: 768px)',
+        laptop: '(max-width: 1400px) and (min-width: 768px)',
     }
 }
 

@@ -29,3 +29,9 @@ export const ButtonContainer = styled.button`
     cursor: pointer;
   }
 `;
+
+export const ImageContainer = styled.img`
+&:hover {
+  cursor: pointer;
+}
+`;

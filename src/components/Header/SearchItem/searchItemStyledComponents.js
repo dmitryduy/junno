@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FlexContainer} from "../../../GlobalContainers";
+import {FlexContainer, ImageContainer} from "../../../GlobalContainers";
 
 
 export const SearchItemContainer = styled(FlexContainer)`
@@ -11,7 +11,7 @@ export const SearchItemContainer = styled(FlexContainer)`
   }
 `;
 
-export const SearchItemImage = styled.img`
+export const SearchItemImage = styled(ImageContainer)`
   width: 150px;
   height: 120px;
   margin-right: 30px;
