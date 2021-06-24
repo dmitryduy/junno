@@ -8,6 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addFavorites, addToCart, removeFavorite} from "../../redux/cartReducer";
 import SuggestProducts from "../SuggestProducts/SuggestProducts";
 import {fetchCards} from "../../redux/shoesReducer";
+import {themeSettings} from "../../constants";
 
 
 const AboutProduct = () => {
@@ -66,7 +67,7 @@ const AboutProduct = () => {
 
     return (
         <>
-            <Header/>
+            <Header color={themeSettings.PRODUCT_PAGE_COLOR}/>
             {card && <>
                 <div className='about'>
                     <div className="about__gallery">

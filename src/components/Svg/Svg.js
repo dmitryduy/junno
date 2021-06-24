@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 const svgs = {
     shuffle: <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="random"
@@ -39,9 +40,11 @@ const svgs = {
     </svg>
 }
 
+
 const Svg = ({type}) => {
 
     return svgs[type];
+
 }
 
 export default Svg;

@@ -14,7 +14,6 @@ function App() {
             <BrowserRouter>
                 <Provider store={store}>
                     <div className="App">
-                        klasdjfsdklfjsd
                         <WishList/>
                         <Route path='/' exact component={Home}/>
                         <Route path='/about/:id'  component={AboutProduct}/>

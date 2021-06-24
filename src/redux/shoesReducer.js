@@ -1,9 +1,10 @@
 const initialState = {
+    cards: [],
     categories: ['all', 'women', 'men', 'casual'],
     activeCategory: 0,
-    cards: [],
     foundCards: [],
 }
+
 
 const constants = {
     SET_CATEGORY: 'SET_CATEGORY',

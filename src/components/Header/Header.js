@@ -7,8 +7,20 @@ import {searchShoes} from "../../redux/shoesReducer";
 import SearchItem from "./SearchItem/SearchItem";
 import {NavLink} from "react-router-dom";
 import {showWishList} from "../../redux/cartReducer";
+import {
+    SearchButton,
+    SearchInput,
+    SearchResults,
+    StyledHeader,
+    TotalPrice,
+    WidgetCounter,
+    WidgetsItem,
+    WidgetsList
+} from "./headerStyledComponents";
 
-const Header = () => {
+
+
+const Header = ({color}) => {
 
     const [showSearch, setSearch] = useState(false);
     const foundShoes = useSelector(({shoes}) => shoes.foundCards);
@@ -35,43 +47,43 @@ const Header = () => {
 
     const countFavorites = useSelector(({cart}) => cart.favorites.length);
     return (
-        <div className='header'>
+        <StyledHeader margin='20px 0'>
             <div className="header__logo">
                 <NavLink to='/'>
                     <img src={logo} alt="logo"/>
                 </NavLink>
             </div>
             <div className='header__search'>
-                <input onInput={(e) => showShoes(e.target.value)}
-                       onBlur={() => hideShoes()}
-                       type="text"
-                       placeholder='Enter your search key...'/>
-                <button className='header__search-btn'>
+                <SearchInput onInput={(e) => showShoes(e.target.value)}
+                             onBlur={() => hideShoes()}
+                             padding='10px'
+                />
+                <SearchButton color='#fff' bgColor={color}>
                     <Svg type='search'/>
-                </button>
-                <div className={`header__hidden-search ${!showSearch && 'hidden'}`}>
+                </SearchButton>
+                <SearchResults className={!showSearch && 'header__hidden-search_disabled'}>
                     {!foundShoes.length && <span className='header__not-found'>Not found</span>}
                     {foundShoes.map(shoe => <SearchItem key={shoe.id} {...shoe}/>).slice(0, 4)}
-                </div>
+                </SearchResults>
             </div>
-            <div className="header__cart-block-links">
-                <div className="header__shuffle header__cart-block-link">
+            <WidgetsList as='ul' justify='space-between' align='center'>
+                <WidgetsItem color={color}>
                     <Svg type='shuffle'/>
-                    <span className='count'>1</span>
-                </div>
-                <div onClick={activateWishlist} className="header__favorite header__cart-block-link">
+                    <WidgetCounter bgColor={color} >1</WidgetCounter>
+                </WidgetsItem>
+                <WidgetsItem color={color} onClick={activateWishlist}>
                     <Svg type='heart'/>
-                    {countFavorites ? <span className='count'>{countFavorites}</span> : null}
-                </div>
-                <div className="header__cart header__cart-block-link">
-                    <div className="header__cart-block-link">
+                    {countFavorites ? <WidgetCounter bgColor={color}>{countFavorites}</WidgetCounter> : null}
+                </WidgetsItem>
+                <WidgetsItem color={color} className="header__cart">
+                    <div className="header__cart-svg">
                         <Svg type='bag'/>
-                        {countInCart ? <span className='count'>{countInCart > 99 ? 99 : countInCart}</span> : null}
+                        {countInCart ? <WidgetCounter bgColor={color}>{countInCart > 99 ? 99 : countInCart}</WidgetCounter> : null}
                     </div>
-                    <span className='header__total-price'>${(totalPrice > 9999.99 ? 9999.99 : totalPrice) || 0}</span>
-                </div>
-            </div>
-        </div>
+                    <TotalPrice>${(totalPrice > 9999.99 ? 9999.99 : totalPrice) || 0}</TotalPrice>
+                </WidgetsItem>
+            </WidgetsList>
+        </StyledHeader>
     )
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import './Category.css';
-import {changeCategory, fetchCategoryCards, setCards} from "../../../redux/shoesReducer";
+import {changeCategory, fetchCategoryCards,/* fetchCategoryCards*/} from "../../../redux/shoesReducer";
 import {useDispatch} from "react-redux";
 
 const Category = ({name, active, setCategory, index}) => {
