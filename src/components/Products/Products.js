@@ -1,9 +1,10 @@
 import React, {useEffect} from "react";
-import './Products.css';
 import {useDispatch, useSelector} from "react-redux";
 import Category from "./Category/Category";
 import Card from "./Card/Card";
 import {fetchCards} from "../../redux/shoesReducer";
+import {FlexContainer} from "../../GlobalContainers";
+import {CardsContainer, ProductSubtitle, ProductTitle} from "./productsStyledComponents";
 
 const Products = () => {
 
@@ -23,23 +24,21 @@ const Products = () => {
     const setCategory = useDispatch();
 
     return (
-        <div className='products'>
-            <h2 className='products__header'>
-                Our Products
-            </h2>
-            <p className='products__description'>
-                Add our products to weekly line up
-            </p>
-            <div className="products__categories">
-                {categories.map((category, index) => <Category index={index} setCategory={setCategory} key={index}
-                                                               name={category}
-                                                               active={activeCategoryIndex === index && 'active'}/>)}
-            </div>
-            <div className="cards">
+        <FlexContainer direction='column' margin='30px 0 0' align='center'>
+            <ProductTitle>Our Products</ProductTitle>
+            <ProductSubtitle>Add our products to weekly line up</ProductSubtitle>
+            {/* Category container */}
+            <FlexContainer justify='center' wrap>
+                {categories.map((category, index) =>
+                    <Category index={index} setCategory={setCategory} key={index}
+                              name={category}
+                              active={activeCategoryIndex === index && 'active'}/>)}
+            </FlexContainer>
+            {/* Cards container*/}
+            <CardsContainer justify='center' margin='40px 0 0' wrap>
                 {cards.map(card => <Card key={card.id} {...card}/>)}
-
-            </div>
-        </div>
+            </CardsContainer>
+        </FlexContainer>
     )
 }
 

@@ -4,6 +4,7 @@ export const FlexContainer = styled.div`
   display: flex;
   justify-content: ${props => props.justify || 'flex-start'};
   flex-direction: ${props => props.direction || 'row'};
+  flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'};
   align-items: ${props => props.align || 'normal'};
   margin: ${props => props.margin || '0'};
   padding: ${props => props.padding || '0'};

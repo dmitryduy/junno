@@ -5,6 +5,15 @@ import {addFavorites, removeFavorite} from "../../../redux/cartReducer";
 import {useDispatch, useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
 import Rating from "../../Rating/Rating";
+import {
+    CardContainer, CardPriceContainer,
+    CardTitle,
+    CardWidget,
+    CardWidgetsContainer,
+    Promotions,
+    PromotionsItem
+} from "./cardStyledComponents";
+import {FlexContainer, ImageContainer} from "../../../GlobalContainers";
 
 const Card = ({isNew, name, price, discount, rating, images, id, favorite}) => {
     const [hiddenCartItems, setVisibilityCartItems] = useState(false);
@@ -31,34 +40,39 @@ const Card = ({isNew, name, price, discount, rating, images, id, favorite}) => {
     }
 
     return (
-        <div className='card' onMouseEnter={showCartItems}
-             onMouseLeave={hideCartItem}>
+        <CardContainer className='card' direction='column' padding='10px' margin='0 0 20px 20px'
+                       onMouseEnter={showCartItems}
+                       onMouseLeave={hideCartItem}>
             <div ref={thumbnailRef} className="card__thumbnail">
                 <NavLink to={`/about/${id}`}>
-                     <img src={images[0]} alt="shoes image"/>
+                    <ImageContainer src={images[0]} alt="shoes image"/>
                 </NavLink>
-                <div className="card__promotions">
-                    {discount && <span className="card__discount">-{discount}%</span>}
-                    {isNew && <span className="card__new">New</span>}
-                </div>
-                <div className={`card__cart-items ${hiddenCartItems ? 'show' : 'hide'}`}>
-                    <div className={favorites.includes(id) && 'favorite'} onClick={toggleFavorites}><Svg type='heart'/></div>
-                    <div><Svg type='shuffle'/></div>
-                    <div><Svg type='search'/></div>
-                </div>
+                <Promotions justify='space-between' >
+                    {/* Discount label */}
+                    {discount && <PromotionsItem>-{discount}%</PromotionsItem>}
+                    {/* New product label */}
+                    {isNew && <PromotionsItem>New</PromotionsItem>}
+                </Promotions>
+                <CardWidgetsContainer justify='center' className={hiddenCartItems ? 'card_show' : 'card_hide'}>
+                    <CardWidget className={favorites.includes(id) && 'favorite'} onClick={toggleFavorites}><Svg type='heart'/>
+                    </CardWidget>
+                    <CardWidget><Svg type='shuffle'/></CardWidget>
+                    <CardWidget><Svg type='search'/></CardWidget>
+                </CardWidgetsContainer>
             </div>
-            <div className="card__description">
+            {/* Card description */}
+            <FlexContainer direction='column' align='flex-start'>
                 <NavLink to={`/about/${id}`}>
-                    <div className="card__name">{name}</div>
+                    <CardTitle>{name}</CardTitle>
                 </NavLink>
                 <Rating rating={rating}/>
-                <div className="cart__price">
-                    {discount && <span className="cart__old-price">${price}</span>}
+                <CardPriceContainer justify='space-between' align='center' className="cart__price">
+                    {discount && <span className="card__old-price">${price}</span>}
                     <span className={discount && 'card__discount-price'}>${discount ? newPrice : price}</span>
                     <div><Svg type='cart'/></div>
-                </div>
-            </div>
-        </div>
+                </CardPriceContainer>
+            </FlexContainer>
+        </CardContainer>
     )
 }
 

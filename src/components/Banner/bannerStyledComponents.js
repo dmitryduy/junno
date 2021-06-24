@@ -3,7 +3,6 @@ import {FlexContainer, ImageContainer} from "../../GlobalContainers";
 
 
 export const BannerContainer = styled(FlexContainer)`
-  flex-wrap: wrap;
   @media ${props => props.theme.media.tablet} {
    
   }
