@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FlexContainer} from "../../../GlobalContainers";
+import {FlexContainer, ImageContainer} from "../../../GlobalContainers";
 
 export const CardContainer = styled(FlexContainer)`
   width: 250px;
@@ -11,7 +11,24 @@ export const CardContainer = styled(FlexContainer)`
     box-shadow: 4px 2px 19px 3px rgba(34, 60, 80, 0.2);
     transform: translateY(-5px);
   }
-  
+  @media ${props => props.theme.media.tablet} {
+    width: 350px;
+  }
+  @media ${props => props.theme.media.phone} {
+    width: 100%;
+  }
+`;
+
+export const CardImage = styled(ImageContainer).attrs(() => ({
+    alt: 'shoes image',
+
+}))`
+  @media ${props => props.theme.media.tablet} {
+    width: 100%;
+  }
+  @media ${props => props.theme.media.phone} {
+    width: 100%;
+  }
 `;
 
 export const Promotions = styled(FlexContainer)`

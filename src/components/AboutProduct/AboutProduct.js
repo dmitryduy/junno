@@ -9,6 +9,27 @@ import {addFavorites, addToCart, removeFavorite} from "../../redux/cartReducer";
 import SuggestProducts from "../SuggestProducts/SuggestProducts";
 import {fetchCards} from "../../redux/shoesReducer";
 import {themeSettings} from "../../constants";
+import {FlexContainer} from "../../GlobalContainers";
+import {
+    AboutCardTitle, AboutContainer,
+    AboutGallery,
+    CardDescription,
+    CardInfo,
+    CompareWidget,
+    DecrementButton,
+    DefaultPrice,
+    DiscountLabel,
+    FavoriteWidget,
+    GalleryItem,
+    IncrementButton,
+    MainImage,
+    NewItemLabel,
+    NewPrice,
+    OrderButton,
+    OrderContainer,
+    OrderInput,
+    WidgetsContainer
+} from "./aboutStyledComponents";
 
 
 const AboutProduct = () => {
@@ -30,8 +51,8 @@ const AboutProduct = () => {
     }, []);
 
     useEffect(() => {
-       window.scrollTo(0,0);
-    },[id]);
+        window.scrollTo(0, 0);
+    }, [id]);
 
     const changeImage = newImage => {
         setImage(newImage);
@@ -69,59 +90,60 @@ const AboutProduct = () => {
         <>
             <Header color={themeSettings.PRODUCT_PAGE_COLOR}/>
             {card && <>
-                <div className='about'>
-                    <div className="about__gallery">
-                        {card.isNew && <div className="about__label">New</div>}
-                        <img className='about__main-image'
+                <AboutContainer justify='space-between'>
+                    <AboutGallery>
+                        {card.isNew && <NewItemLabel>New</NewItemLabel>}
+                        <MainImage
                              width={400}
-                             src={card.images[activeImage]}
-                             alt="product image"/>
-                        <div className="about__gallery-items">
+                             src={card.images[activeImage]}/>
+                        {/* Small gallery container */}
+                        <FlexContainer justify='space-between'>
                             {card.images.map((image, index) => {
                                 return (
-                                    <img key={index}
-                                         width={100}
-                                         className={`about__gallery-item ${index === activeImage && 'about__gallery-item_active'}`}
-                                         src={image}
-                                         alt="gallery image"
-                                         onClick={() => changeImage(index)}/>
+                                    <GalleryItem key={index}
+                                                 width={100}
+                                                 className={index === activeImage && 'about__gallery-item_active'}
+                                                 src={image}
+                                                 onClick={() => changeImage(index)}/>
                                 )
                             })}
-                        </div>
-                    </div>
-                    <div className="about__info">
-                        <h1 className="about__name">{card && card.name}</h1>
+                        </FlexContainer>
+                    </AboutGallery>
+                    <CardInfo direction='column' flex='6' margin='0 0 0 50px'>
+                        <AboutCardTitle>{card && card.name}</AboutCardTitle>
                         <Rating rating={card.rating}/>
-                        <div className="about__prices">
-                            <div className={`${card.discount && 'about__old__price'} about__price`}>${card.price}</div>
-                            {card.discount && <div className="about__new-price">${newPrice}</div>}
-                            {card.discount && <div className="about__discount">Save {card.discount}%</div>}
-                        </div>
-                        <p className="about__description">{card.description}</p>
-                        <div className="about__cart">
+                        {/* Card Prices */}
+                        <FlexContainer align='center' margin='10px 0 20px'>
+                            <DefaultPrice className={card.discount && 'about__old__price'}>${card.price}</DefaultPrice>
+                            {card.discount && <NewPrice>${newPrice}</NewPrice>}
+                            {card.discount && <DiscountLabel>Save {card.discount}%</DiscountLabel>}
+                        </FlexContainer>
+                        <CardDescription>{card.description}</CardDescription>
+                        <OrderContainer margin='50px 0 0'>
                             <div className="about__counter-wrapper">
-                                <input onInput={(e) => changeItemCount(e.target.value)}
-                                       value={countItems}
-                                       className='about__counter'
-                                       type="text"
+                                <OrderInput height='60px' width='40px' padding='2px 4px'
+                                            onInput={(e) => changeItemCount(e.target.value)}
+                                            value={countItems}
                                 />
-                                <button onClick={incrementItems} className='about__increment'>+</button>
-                                <button onClick={decrementItems} className='about__decrement'>-</button>
+                                <IncrementButton onClick={incrementItems}>+</IncrementButton>
+                                <DecrementButton onClick={decrementItems}>-</DecrementButton>
                             </div>
-                            <button onClick={AddToCart} className='about__add-to-cart'>+ add to cart</button>
-                        </div>
-                        <div className="about__widgets">
-                            <div onClick={toggleFavorite} className="about__widget about__favorite">
+                            <OrderButton color='#fff'
+                                         bgColor='#1d1d1d'
+                                         onClick={AddToCart}>+ add to cart</OrderButton>
+                        </OrderContainer>
+                        <WidgetsContainer margin='40px 0 0'>
+                            <FavoriteWidget onClick={toggleFavorite}>
                                 <Svg type='heart'/>
                                 <span>{favorites.includes(card.id) ? 'Remove from ' : 'Add to '}wishlist</span>
-                            </div>
-                            <div className="about__widget about__compare">
+                            </FavoriteWidget>
+                            <CompareWidget>
                                 <Svg type='shuffle'/>
                                 <span>Add to compare</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </CompareWidget>
+                        </WidgetsContainer>
+                    </CardInfo>
+                </AboutContainer>
                 <SuggestProducts id={id}/>
             </>
             }

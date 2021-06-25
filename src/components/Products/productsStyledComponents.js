@@ -19,7 +19,4 @@ export const ProductSubtitle = styled.p`
 
 export const CardsContainer = styled(FlexContainer)`
     width: 100%;
-  & span {
-    
-  }
 `;

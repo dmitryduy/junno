@@ -5,9 +5,11 @@ export const FlexContainer = styled.div`
   justify-content: ${props => props.justify || 'flex-start'};
   flex-direction: ${props => props.direction || 'row'};
   flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'};
+  flex: ${props => props.flex || '0 1 auto'};
   align-items: ${props => props.align || 'normal'};
   margin: ${props => props.margin || '0'};
   padding: ${props => props.padding || '0'};
+
 `;
 
 export const InputContainer = styled.input.attrs(props => ({

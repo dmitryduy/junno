@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
 import Rating from "../../Rating/Rating";
 import {
-    CardContainer, CardPriceContainer,
+    CardContainer, CardImage, CardPriceContainer,
     CardTitle,
     CardWidget,
     CardWidgetsContainer,
@@ -45,7 +45,7 @@ const Card = ({isNew, name, price, discount, rating, images, id, favorite}) => {
                        onMouseLeave={hideCartItem}>
             <div ref={thumbnailRef} className="card__thumbnail">
                 <NavLink to={`/about/${id}`}>
-                    <ImageContainer src={images[0]} alt="shoes image"/>
+                    <CardImage src={images[0]}/>
                 </NavLink>
                 <Promotions justify='space-between' >
                     {/* Discount label */}
