@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/junno/static/css/main.add20a9f.chunk.css",
-    "main.js": "/junno/static/js/main.ad5d32f6.chunk.js",
-    "main.js.map": "/junno/static/js/main.ad5d32f6.chunk.js.map",
+    "main.js": "/junno/static/js/main.d9dce6b8.chunk.js",
+    "main.js.map": "/junno/static/js/main.d9dce6b8.chunk.js.map",
     "runtime-main.js": "/junno/static/js/runtime-main.762da3c8.js",
     "runtime-main.js.map": "/junno/static/js/runtime-main.762da3c8.js.map",
     "static/js/2.bb7a2dac.chunk.js": "/junno/static/js/2.bb7a2dac.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.762da3c8.js",
     "static/js/2.bb7a2dac.chunk.js",
     "static/css/main.add20a9f.chunk.css",
-    "static/js/main.ad5d32f6.chunk.js"
+    "static/js/main.d9dce6b8.chunk.js"
   ]
 }
