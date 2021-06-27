@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/imgs/logo.jpg';
 import Svg from "../Svg/Svg";
 import './Header.css';
-import {useDispatch, useSelector} from "react-redux";
-import {searchShoes} from "../../redux/shoesReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { searchShoes } from "../../redux/shoesReducer";
 import SearchItem from "./SearchItem/SearchItem";
-import {NavLink} from "react-router-dom";
-import {showWishList} from "../../redux/cartReducer";
+import { NavLink } from "react-router-dom";
+import { showWishList } from "../../redux/cartReducer";
 import {
     SearchButton, SearchContainer,
     SearchInput,
@@ -19,15 +19,15 @@ import {
 } from "./headerStyledComponents";
 
 
-
-const Header = ({color}) => {
-
+const Header = ({ color }) => {
     const [showSearch, setSearch] = useState(false);
+
     const foundShoes = useSelector(({shoes}) => shoes.foundCards);
-    const {countInCart, totalPrice} = useSelector(({cart}) => ({
-        countInCart: cart.cart.reduce((acc, item) => acc + item.count, 0),
-        totalPrice: +cart.totalPrice
+    const {totalPrice, countFavorites} = useSelector(({cart}) => ({
+        totalPrice: cart.totalPrice,
+        countFavorites: cart.favorites.length,
     }));
+
     const dispatch = useDispatch();
 
 
@@ -45,19 +45,17 @@ const Header = ({color}) => {
         dispatch(showWishList());
     }
 
-    const countFavorites = useSelector(({cart}) => cart.favorites.length);
     return (
         <StyledHeader margin='20px 0'>
             <div className="header__logo">
-                <NavLink to='/'>
+                <NavLink to='/junno/'>
                     <img src={logo} alt="logo"/>
                 </NavLink>
             </div>
-            <SearchContainer className='header__search'>
+            <SearchContainer>
                 <SearchInput onInput={(e) => showShoes(e.target.value)}
                              onBlur={() => hideShoes()}
                              padding='10px'
-                             margin='0 10px'
                 />
                 <SearchButton color='#fff' bgColor={color}>
                     <Svg type='search'/>
@@ -70,19 +68,13 @@ const Header = ({color}) => {
             <WidgetsList as='ul' justify='space-between' align='center'>
                 <WidgetsItem color={color}>
                     <Svg type='shuffle'/>
-                    <WidgetCounter bgColor={color} >1</WidgetCounter>
+                    <WidgetCounter bgColor={color}>1</WidgetCounter>
                 </WidgetsItem>
                 <WidgetsItem color={color} onClick={activateWishlist}>
                     <Svg type='heart'/>
                     {countFavorites ? <WidgetCounter bgColor={color}>{countFavorites}</WidgetCounter> : null}
                 </WidgetsItem>
-                <WidgetsItem color={color} className="header__cart">
-                    <div className="header__cart-svg">
-                        <Svg type='bag'/>
-                        {countInCart ? <WidgetCounter bgColor={color}>{countInCart > 99 ? 99 : countInCart}</WidgetCounter> : null}
-                    </div>
-                    <TotalPrice>${(totalPrice > 9999.99 ? 9999.99 : totalPrice) || 0}</TotalPrice>
-                </WidgetsItem>
+                <TotalPrice>${totalPrice}</TotalPrice>
             </WidgetsList>
         </StyledHeader>
     )

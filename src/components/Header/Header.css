@@ -7,16 +7,8 @@
     display: none;
 }
 
-.header__cart-svg {
-    position: relative;
-    bottom: 2px;
-}
 
-.header__cart {
-    display: flex;
-    align-items: center;
-    flex: .5;
-}
+
 
 .header__not-found {
     margin: 20px;

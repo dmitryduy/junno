@@ -15,7 +15,7 @@ function App() {
                 <Provider store={store}>
                     <div className="App">
                         <WishList/>
-                        <Route path='/' exact component={Home}/>
+                        <Route path='/junno/' exact component={Home}/>
                         <Route path='/about/:id'  component={AboutProduct}/>
                     </div>
                 </Provider>

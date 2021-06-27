@@ -177,6 +177,7 @@ const Widget = styled(FlexContainer)`
   align-items: center;
   &:hover {
     color: #10a341;
+    cursor: pointer;
   }
 `;
 

@@ -44,11 +44,11 @@ const AboutProduct = () => {
 
 
     const newPrice = card && (+card.price * (1 - +card.discount / 100)).toFixed(2);
-
+/*
     useEffect(() => {
         if (!card)
             dispatch(fetchCards());
-    }, []);
+    }, []);*/
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -78,11 +78,10 @@ const AboutProduct = () => {
     }
 
     const toggleFavorite = () => {
-        if (favorites.includes(card.id)) {
-            dispatch(removeFavorite(card.id))
-        } else {
-            dispatch(addFavorites(card.id));
-        }
+        favorites.includes(card.id)
+            ? dispatch(removeFavorite(card.id))
+            : dispatch(addFavorites(card.id));
+
 
     }
 
@@ -94,8 +93,8 @@ const AboutProduct = () => {
                     <AboutGallery>
                         {card.isNew && <NewItemLabel>New</NewItemLabel>}
                         <MainImage
-                             width={400}
-                             src={card.images[activeImage]}/>
+                            width={400}
+                            src={card.images[activeImage]}/>
                         {/* Small gallery container */}
                         <FlexContainer justify='space-between'>
                             {card.images.map((image, index) => {

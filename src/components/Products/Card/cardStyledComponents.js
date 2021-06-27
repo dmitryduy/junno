@@ -13,9 +13,17 @@ export const CardContainer = styled(FlexContainer)`
   }
   @media ${props => props.theme.media.tablet} {
     width: 350px;
+    &:hover {
+      box-shadow: none;
+      transform: translateY(0);
+    }
   }
   @media ${props => props.theme.media.phone} {
     width: 100%;
+    &:hover {
+      box-shadow: none;
+      transform: translateY(0);
+    }
   }
 `;
 
@@ -55,7 +63,7 @@ export const PromotionsItem = styled.span`
 export const CardWidgetsContainer = styled(FlexContainer)`
   position: absolute;
   width: 100%;
-  bottom: 20px ;
+  bottom: 20px; 
 `;
 
 export const CardWidget = styled.div`
@@ -68,8 +76,26 @@ export const CardWidget = styled.div`
   transition: .6s ease;
   &:hover {
     background-color: #f33535;
-    color: white;
+    color: #fff;
     cursor: pointer;
+  }
+  @media ${props => props.theme.media.tablet} {
+    &:hover {
+      background-color: #f6f6f6;
+      color: #8f8f8f;
+    }
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+  @media ${props => props.theme.media.phone} {
+   &:hover {
+     background-color: #f6f6f6;
+     color: #8f8f8f;
+   }
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
   }
 `;
 

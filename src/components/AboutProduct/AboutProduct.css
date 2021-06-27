@@ -1,6 +1,6 @@
 
 .about__gallery-item_active {
-    border: 2px solid #10a341;
+    border: 2px solid #10a341 !important;
 }
 
 .about__old__price {
