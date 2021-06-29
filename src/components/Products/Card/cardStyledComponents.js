@@ -2,68 +2,65 @@ import styled from "styled-components";
 import {FlexContainer, ImageContainer} from "../../../GlobalContainers";
 
 export const CardContainer = styled(FlexContainer)`
+  position: relative;
   width: 250px;
-  overflow: hidden;
-  transition: .2s linear;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  &:hover {
-    box-shadow: 4px 2px 19px 3px rgba(34, 60, 80, 0.2);
-    transform: translateY(-5px);
+  transition: .3s linear;
+
+  @media ${props => props.theme.media.desktop} {
+    &:hover {
+      box-shadow: 4px 2px 19px 3px rgba(34, 60, 80, 0.2);
+      transform: translateY(-5px);
+    }
   }
+
   @media ${props => props.theme.media.tablet} {
     width: 350px;
-    &:hover {
-      box-shadow: none;
-      transform: translateY(0);
-    }
   }
-  @media ${props => props.theme.media.phone} {
-    width: 100%;
-    &:hover {
-      box-shadow: none;
-      transform: translateY(0);
-    }
-  }
-`;
 
-export const CardImage = styled(ImageContainer).attrs(() => ({
-    alt: 'shoes image',
-
-}))`
-  @media ${props => props.theme.media.tablet} {
-    width: 100%;
-  }
   @media ${props => props.theme.media.phone} {
     width: 100%;
   }
 `;
 
-export const Promotions = styled(FlexContainer)`
-  position: absolute;
+export const Thumbnail = styled.div`
   width: 100%;
-  top: 0;
+  height: 200px;
+  background-image: url(${props => props.img});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &hover {
+    cursor: pointer;
+  }
 `;
 
-export const PromotionsItem = styled.span`
+const PromotionsItem = styled.span`
   border-radius: 5px;
   height: 20px;
   padding: 0 10px;
   color: white;
   letter-spacing: -1px;
   font-weight: 600;
-  &:first-child {
-    background-color: #10a341;
-  }
-  &:last-child {
-    background-color: #f33535;
-  }
+`;
+
+export const PromotionDiscountItem = styled(PromotionsItem)`
+  background-color: #10a341;
+`;
+
+
+export const PromotionNewItem = styled(PromotionsItem)`
+  background-color: #f33535;
+
 `;
 
 export const CardWidgetsContainer = styled(FlexContainer)`
   position: absolute;
-  width: 100%;
-  bottom: 20px; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  @media ${props => props.theme.media.laptopAndLower} {
+  display: none;
 `;
 
 export const CardWidget = styled.div`
@@ -73,39 +70,35 @@ export const CardWidget = styled.div`
   padding: 10px;
   border-radius: 50%;
   background-color: #f6f6f6;
-  transition: .6s ease;
-  &:hover {
-    background-color: #f33535;
-    color: #fff;
-    cursor: pointer;
+  transition: .3s linear;
+
+  &:not(:first-child) {
+    margin-left: 10px;
   }
-  @media ${props => props.theme.media.tablet} {
+
+  @media ${props => props.theme.media.desktop} {
     &:hover {
-      background-color: #f6f6f6;
-      color: #8f8f8f;
-    }
-    &:not(:first-child) {
-      margin-left: 10px;
+      background-color: #f33535;
+      color: #fff;
+      cursor: pointer;
     }
   }
-  @media ${props => props.theme.media.phone} {
-   &:hover {
-     background-color: #f6f6f6;
-     color: #8f8f8f;
-   }
-    &:not(:first-child) {
-      margin-left: 10px;
-    }
-  }
+
+`;
+
+export const CardDescriptionContainer = styled(FlexContainer)`
+    margin-top: 20px;
 `;
 
 export const CardTitle = styled.span`
   color: #707070;
-  transition: .5s ease;
-  height: 50px;
-  &:hover {
-    color: #f33535;
-    cursor: pointer;
+  transition: .3s ease;
+
+  @media ${props => props.theme.media.desktop} {
+    &:hover {
+      color: #f33535;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -120,14 +113,17 @@ export const CardPriceContainer = styled(FlexContainer)`
     height: 40px;
     padding: 10px;
     border-radius: 50%;
-    transition: .5s ease;
+    transition: .3s ease;
     position: relative;
     top: -2px;
     color: black;
-    &:hover {
-      cursor: pointer;
-      background-color: #f33535;
-      color: white;
+
+    @media ${props => props.theme.media.desktop} {
+      &:hover {
+        cursor: pointer;
+        background-color: #f33535;
+        color: white;
+      }
     }
   }
 `;

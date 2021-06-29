@@ -35,7 +35,7 @@ import {
 const AboutProduct = () => {
 
     const {id} = useParams();
-    const card = useSelector(({shoes}) => shoes.cards[id - 1]);
+    const card = useSelector(({shoes}) => shoes.cards.filter(card => card.id === +id)[0]);
     const [activeImage, setImage] = useState(0);//index
     const [countItems, setCountItems] = useState(1);
 
@@ -43,12 +43,11 @@ const AboutProduct = () => {
     const dispatch = useDispatch();
 
 
-    const newPrice = card && (+card.price * (1 - +card.discount / 100)).toFixed(2);
-/*
+    const newPrice = card && (+card.price * (1 - card.discount / 100)).toFixed(2);
     useEffect(() => {
         if (!card)
             dispatch(fetchCards());
-    }, []);*/
+    }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0);

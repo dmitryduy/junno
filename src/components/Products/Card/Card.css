@@ -4,13 +4,6 @@
     height: 250px;
 }
 
-.card__thumbnail {
-    position: relative;
-}
-
-.card__thumbnail:hover {
-    cursor: pointer;
-}
 
 .card_hide {
     opacity: 0;
@@ -22,6 +15,12 @@
     opacity: 1;
 }
 
+@media (max-width: 1400px) {
+    .card_hide {
+        opacity: 1;
+        transition: 1s ease;
+    }
+}
 .card__discount-price {
     color: #f33535;
 

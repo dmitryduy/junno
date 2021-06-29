@@ -8,7 +8,7 @@ export const SearchItemContainer = styled(FlexContainer)`
   
   @media ${props => props.theme.media.desktop} {
     &:hover {
-      cursor: pointer;
+      cursor: pointer; 
       background-color: #eee;
     }
   }

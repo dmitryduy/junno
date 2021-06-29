@@ -97,7 +97,7 @@ export const DiscountLabel = styled.div`
   color: white;
 `;
 
-export const CardDescription = styled.p`
+export const CardDescription = styled.code`
   width: 70%;
   color: #707070;
   @media ${props => props.theme.media.laptop} {

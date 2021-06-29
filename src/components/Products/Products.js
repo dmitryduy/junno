@@ -37,6 +37,7 @@ const Products = () => {
             {/* Cards container*/}
             <CardsContainer justify='center' margin='40px 0 0' wrap>
                 {cards.map(card => <Card key={card.id} {...card}/>)}
+                <div style={{flex: '1'}}/>
             </CardsContainer>
         </FlexContainer>
     )
