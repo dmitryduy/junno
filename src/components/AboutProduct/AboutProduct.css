@@ -1,15 +1,8 @@
 
-.about__gallery-item_active {
-    border: 2px solid #10a341 !important;
-}
 
 .about__old__price {
     text-decoration: line-through;
     color: #9b9b9b;
     font-size: 1.3em;
     font-weight: 400;
-}
-
-.about__counter-wrapper {
-    position: relative;
 }

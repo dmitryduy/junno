@@ -11,6 +11,8 @@ export const StyledHeader = styled(FlexContainer)`
   }
 `;
 
+
+
 export const SearchContainer = styled(FlexContainer)`
   width: 60%;
   max-width: 1500px;
@@ -59,6 +61,9 @@ export const SearchResults = styled.div`
   background-color: #fff;
   width: calc(100% - 57px);
   z-index: 1;
+  &.disabled {
+    display: none; 
+  }
 `;
 
 export const WidgetsList = styled(FlexContainer)`

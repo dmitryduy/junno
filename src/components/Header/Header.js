@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../assets/imgs/logo.jpg';
 import Svg from "../Svg/Svg";
-import './Header.css';
 import { useDispatch, useSelector } from "react-redux";
 import { searchShoes } from "../../redux/shoesReducer";
 import SearchItem from "./SearchItem/SearchItem";
@@ -47,11 +46,9 @@ const Header = ({ color }) => {
 
     return (
         <StyledHeader margin='20px 0'>
-            <div className="header__logo">
                 <NavLink to='/junno/'>
                     <img src={logo} alt="logo"/>
                 </NavLink>
-            </div>
             <SearchContainer>
                 <SearchInput onInput={(e) => showShoes(e.target.value)}
                              onBlur={() => hideShoes()}
@@ -60,7 +57,7 @@ const Header = ({ color }) => {
                 <SearchButton color='#fff' bgColor={color}>
                     <Svg type='search'/>
                 </SearchButton>
-                <SearchResults className={!showSearch && 'header__hidden-search_disabled'}>
+                <SearchResults className={!showSearch && 'disabled'}>
                     {!foundShoes.length && <span className='header__not-found'>Not found</span>}
                     {foundShoes.map(shoe => <SearchItem key={shoe.id} {...shoe}/>).slice(0, 4)}
                 </SearchResults>
@@ -74,7 +71,7 @@ const Header = ({ color }) => {
                     <Svg type='heart'/>
                     {countFavorites ? <WidgetCounter bgColor={color}>{countFavorites}</WidgetCounter> : null}
                 </WidgetsItem>
-                <TotalPrice>${totalPrice}</TotalPrice>
+                <TotalPrice>{totalPrice} ₽</TotalPrice>
             </WidgetsList>
         </StyledHeader>
     )

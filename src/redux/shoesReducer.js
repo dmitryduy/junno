@@ -3,13 +3,16 @@ const initialState = {
     categories: ['all', 'women', 'men', 'casual'],
     activeCategory: 0,
     foundCards: [],
+    currentPageIndex: 0,
+    countInPage: 20,
 }
 
 
 const constants = {
     SET_CATEGORY: 'SET_CATEGORY',
     SET_CARDS: "SET_CARDS",
-    SEARCH_SHOES: 'SEARCH_SHOES'
+    SEARCH_SHOES: 'SEARCH_SHOES',
+    SET_CURRENT_PAGE: 'SET_CURRENT_PAGE',
 }
 
 export const shoesReducer = (state = initialState, action) => {
@@ -29,6 +32,11 @@ export const shoesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 foundCards: result
+            }
+        case constants.SET_CURRENT_PAGE:
+            return {
+                ...state,
+                currentPageIndex: action.payload
             }
         default:
             return state;
@@ -65,4 +73,9 @@ export const fetchCategoryCards = name => dispatch => {
 export const searchShoes = text => ({
     type: constants.SEARCH_SHOES,
     payload: text
+})
+
+export const setCurrentPage = pageId => ({
+    type: constants.SET_CURRENT_PAGE,
+    payload: pageId,
 })
