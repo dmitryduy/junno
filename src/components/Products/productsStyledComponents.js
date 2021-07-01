@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FlexContainer} from "../../GlobalContainers";
+
 
 export const ProductTitle = styled.h2`
   font-weight: 500;
@@ -17,6 +17,12 @@ export const ProductSubtitle = styled.p`
   }
 `;
 
-export const CardsContainer = styled(FlexContainer)`
-    width: 100%;
+export const CardsContainer = styled.div`
+  display: grid;
+  width: 100%;
+  margin-top: 30px;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+  grid-template-columns: repeat(auto-fit, 250px);
+  justify-content: center;
 `;

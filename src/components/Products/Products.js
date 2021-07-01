@@ -1,16 +1,21 @@
-import React, {useEffect, useRef} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Category from "./Category/Category";
 import Card from "./Card/Card";
-import {fetchCards} from "../../redux/shoesReducer";
-import {FlexContainer} from "../../GlobalContainers";
-import {CardsContainer, ProductSubtitle, ProductTitle} from "./productsStyledComponents";
+import { fetchCards } from "../../redux/shoesReducer";
+import { FlexContainer } from "../../GlobalContainers";
+import { CardsContainer, ProductSubtitle, ProductTitle } from "./productsStyledComponents";
 import Pagination from "../Pagination/Pagination";
 
 const Products = () => {
     const dispatch = useDispatch();
 
-    const {categories, activeCategory: activeCategoryIndex, currentPageIndex, countInPage} = useSelector(({shoes}) => shoes);
+    const {
+        categories,
+        activeCategory: activeCategoryIndex,
+        currentPageIndex,
+        countInPage
+    } = useSelector(({shoes}) => shoes);
     const cards = useSelector(({shoes}) => shoes.cards.slice((currentPageIndex) * countInPage, (currentPageIndex) * countInPage + countInPage));
     useEffect(() => {
         if (!cards.length)
@@ -30,9 +35,8 @@ const Products = () => {
                               name={category}
                               active={activeCategoryIndex === index && 'active'}/>)}
             </FlexContainer>
-            <CardsContainer justify='center' margin='40px 0 0' wrap>
+            <CardsContainer>
                 {cards.map(card => <Card key={card.id} {...card}/>)}
-                <div style={{flex: '1'}}/>
             </CardsContainer>
             <Pagination activeIndex={currentPageIndex}/>
         </FlexContainer>

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import './AboutProduct.css';
 import Header from "../Header/Header";
 import { useParams } from 'react-router-dom';
 import Rating from "../Rating/Rating";
@@ -38,6 +37,13 @@ const AboutCardTitle = styled.h1`
 const DefaultPrice = styled.div`
   font-size: 1.5em;
   font-weight: bold;
+  
+  &.old-price {
+    text-decoration: line-through;
+    color: #9b9b9b;
+    font-size: 1.3em;
+    font-weight: 400;
+  }
 `;
 
 const NewPrice = styled.div`
@@ -68,7 +74,7 @@ const AboutProduct = () => {
 
     const dispatch = useDispatch();
 
-    const newPrice = card && (card.price * (1 - card['discount'] / 100)).toFixed(2);
+    const newPrice = card && (parseInt(card.price.split(' ').join("")) * (1 - card['discount'] / 100)).toFixed(2);
 
     useEffect(() => {
         card || dispatch(fetchCards());
@@ -89,8 +95,8 @@ const AboutProduct = () => {
                         <Rating rating={card.rating}/>
                         {/* Card Prices */}
                         <FlexContainer align='center' margin='10px 0 20px'>
-                            <DefaultPrice className={card['discount'] && 'about__old__price'}>${card.price}</DefaultPrice>
-                            {card['discount'] && <NewPrice>${newPrice}</NewPrice>}
+                            <DefaultPrice className={card['discount'] && 'old-price'}>{card.price} Р</DefaultPrice>
+                            {card['discount'] && <NewPrice>{newPrice} Р</NewPrice>}
                             {card['discount'] && <DiscountLabel>Save {card['discount']}%</DiscountLabel>}
                         </FlexContainer>
                         <CardDescription>{card.description}</CardDescription>

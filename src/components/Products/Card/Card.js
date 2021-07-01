@@ -1,48 +1,91 @@
-import React, {useRef, useState} from "react";
-import './Card.css';
-import Svg from "../../Svg/Svg";
-import {addFavorites, removeFavorite} from "../../../redux/cartReducer";
-import {useDispatch, useSelector} from "react-redux";
-import {NavLink} from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import Rating from "../../Rating/Rating";
-import {
-    CardContainer, CardDescriptionContainer,
-    CardPriceContainer,
-    CardTitle,
-    CardWidget,
-    CardWidgetsContainer, PromotionDiscountItem, PromotionNewItem,
-    PromotionsItem, Thumbnail
-} from "./cardStyledComponents";
-import {FlexContainer} from "../../../GlobalContainers";
+import { FlexContainer } from "../../../GlobalContainers";
+import styled from "styled-components";
+import Widgets from "./Widgets/Widgets";
+import Price from "./Price/Price";
 
-const Card = ({isNew, name, price, discount, rating, images, id, favorite}) => {
-    const [hiddenCartItems, setVisibilityCartItems] = useState(false);
-    const favorites = useSelector(({cart}) => cart.favorites);
+const CardContainer = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-areas: "image" "widgets" "description";
+  grid-row-gap: 15px;
+  transition: .2s linear;
+  padding: 10px;
 
-    const dispatch = useDispatch();
+  @media ${props => props.theme.media.desktop} {
+    &:hover {
+      box-shadow: 4px 2px 19px 3px rgba(34, 60, 80, 0.2);
+    }
+  }
+`;
 
-    const newPrice = (+price * (1 - discount / 100)).toFixed(2);
+const Thumbnail = styled.div`
+  width: 100%;
+  height: 200px;
+  background-image: url(${props => props.img});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  grid-area: image;
+
+  &hover {
+    cursor: pointer;
+  }
+`;
+
+const PromotionsItem = styled.span`
+  border-radius: 5px;
+  height: 20px;
+  padding: 0 10px;
+  color: white;
+  font-weight: 600;
+`;
+
+const PromotionDiscountItem = styled(PromotionsItem)`
+  background-color: #10a341;
+`;
+
+const PromotionNewItem = styled(PromotionsItem)`
+  background-color: #f33535;
+
+`;
+
+const DescriptionContainer = styled(FlexContainer)`
+  grid-area: description;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+`;
+
+const CardTitle = styled.span`
+  color: #707070;
+  transition: .3s ease;
+  display: block;
+  margin-bottom: 10px;
+
+  @media ${props => props.theme.media.desktop} {
+    &:hover {
+      color: #f33535;
+      cursor: pointer;
+    }
+  }
+`;
+
+const Card = ({isNew, name, price, discount, rating, images, id}) => {
+    const [hideWidgets, setWidgetsVisibility] = useState(false);
 
     const showCartItems = () => {
-        setVisibilityCartItems(true)
+        setWidgetsVisibility(true)
     }
 
     const hideCartItem = () => {
-        setVisibilityCartItems(false)
-    }
-
-    const toggleFavorites = () => {
-        if (!favorites.includes(id)) {
-            dispatch(addFavorites(id));
-        } else {
-            dispatch(removeFavorite(id));
-        }
+        setWidgetsVisibility(false)
     }
 
     return (
-        <CardContainer direction='column' padding='10px' margin='0 0 20px 20px'
-                       onMouseEnter={showCartItems}
-                       onMouseLeave={hideCartItem}>
+        <CardContainer onMouseEnter={showCartItems} onMouseLeave={hideCartItem}>
             <NavLink to={`/about/${id}`}>
                 <Thumbnail img={images[0]}>
                     {/* Promotion container*/}
@@ -52,25 +95,14 @@ const Card = ({isNew, name, price, discount, rating, images, id, favorite}) => {
                     </FlexContainer>
                 </Thumbnail>
             </NavLink>
-            <CardWidgetsContainer justify='center' className={hiddenCartItems ? 'card_show' : 'card_hide'}>
-                <CardWidget className={favorites.includes(id) && 'favorite'} onClick={toggleFavorites}><Svg
-                    type='heart'/>
-                </CardWidget>
-                <CardWidget><Svg type='shuffle'/></CardWidget>
-                <CardWidget><Svg type='search'/></CardWidget>
-            </CardWidgetsContainer>
-            {/* Card description */}
-            <CardDescriptionContainer direction='column' align='flex-start' flex='1' justify='flex-end'>
+            <Widgets hideWidgets={hideWidgets} id={id}/>
+            <DescriptionContainer>
                 <NavLink to={`/about/${id}`}>
                     <CardTitle>{name}</CardTitle>
                 </NavLink>
                 <Rating rating={rating}/>
-                <CardPriceContainer justify='space-between' align='center' className="cart__price">
-                    {discount && <span className="card__old-price">{price} ₽</span>}
-                    <span className={discount && 'card__discount-price'}>{discount ? newPrice : price} ₽</span>
-                    <div><Svg type='cart'/></div>
-                </CardPriceContainer>
-            </CardDescriptionContainer>
+                <Price price={price} discount={discount}/>
+            </DescriptionContainer>
         </CardContainer>
     )
 }

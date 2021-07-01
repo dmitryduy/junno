@@ -3,12 +3,13 @@ import { useDispatch } from "react-redux";
 import { removeFavorite } from "../../../redux/cartReducer";
 
 import styled from "styled-components";
-import {FlexContainer} from "../../../GlobalContainers";
+import { FlexContainer } from "../../../GlobalContainers";
 
 const WishListContainer = styled(FlexContainer)`
   border-top: 1px solid #eeeeee;
   position: relative;
   transition: .2s ease;
+
   &.remove-animation {
     opacity: 0;
     position: relative;
@@ -26,7 +27,7 @@ const WishListImage = styled.div`
 `;
 
 const WishListItemName = styled.span`
-  font-weight: 500;
+  font-weight: 700;
 `;
 
 const WishListRemoveButton = styled.div`
@@ -37,11 +38,15 @@ const WishListRemoveButton = styled.div`
   font-size: 1.5em;
 
   @media ${props => props.theme.media.desktop} {
-  &:hover {
-    color: #f33535;
-    cursor: pointer;
+    &:hover {
+      color: #f33535;
+      cursor: pointer;
+    }
   }
-}
+`;
+
+const Price = styled.div`
+  font-weight: 600;
 `;
 
 
@@ -60,7 +65,7 @@ const WishlistItem = ({name, images, price, id}) => {
             <div style={{margin: 10}}>
                 <WishListItemName>{name.length > 20 ? name.slice(0, 20) + '...' : name}</WishListItemName>
                 {/* Price Container*/}
-                <div>{price} ₽</div>
+                <Price>{price} ₽</Price>
             </div>
             <WishListRemoveButton onClick={deleteFromFavorite}>×</WishListRemoveButton>
         </WishListContainer>

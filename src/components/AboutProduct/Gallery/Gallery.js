@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const GalleryContainer = styled.div`
   position: relative;
-
   @media ${props => props.theme.media.laptopAndLower} {
     width: 100%;
     margin-bottom: 20px;
@@ -41,6 +40,13 @@ const NewItemLabel = styled.span`
   padding: 2px 4px 0;
 `;
 
+const GalleryItemsContainer = styled.div`
+  width: 100%;
+  display: grid;
+    grid-template-columns: repeat(3, 150px);
+  grid-gap: 20px;
+`;
+
 const GalleryItem = styled.div`
   background-image: url(${({image}) => image});
   width: 150px;
@@ -51,7 +57,6 @@ const GalleryItem = styled.div`
   background-repeat: no-repeat;
   border: 2px solid white;
   border-radius: 5px;
-
   &.active {
     border: 2px solid #10a341;
   }
@@ -79,14 +84,14 @@ const Gallery = ({isNew, images}) => {
             {isNew && <NewItemLabel>New</NewItemLabel>}
             <MainImage image={images[activeImage]}/>
             {/* Small gallery container */}
-            <FlexContainer justify='flex-start'>
+            <GalleryItemsContainer>
                 {images.map((image, index) => {
                     return (
                         <GalleryItem key={index} className={index === activeImage && 'active'} image={image}
                                      onClick={() => changeImage(index)}/>
                     )
                 })}
-            </FlexContainer>
+            </GalleryItemsContainer>
         </GalleryContainer>
     )
 }
