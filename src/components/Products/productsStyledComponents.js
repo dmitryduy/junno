@@ -23,6 +23,6 @@ export const CardsContainer = styled.div`
   margin-top: 30px;
   grid-column-gap: 20px;
   grid-row-gap: 40px;
-  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
   justify-content: center;
 `;
